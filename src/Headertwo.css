@@ -1,0 +1,41 @@
+.headerTwo__link{
+    color: white;
+    text-decoration: none;
+    padding:10px;
+    margin-top: -12px;
+}
+
+.headerTwo{
+    color: white;
+    height: 10px;
+    
+}
+
+.headerTwo__options{
+
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    height:20px;
+    background-color: #232f3e;
+
+
+}
+
+.headerTwo__optionDeliverSpan{
+    display: flex;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.headerTwo__optionDeliver{
+    display: flex;
+}
+.headerTwo__optionLinks{
+   
+    display: flex;
+    justify-content: space-between;
+    width: 25%;
+    
+   
+}

@@ -1,0 +1,89 @@
+.navbar {
+    background-color: black;
+    display: flex;
+    align-items: center;
+}
+
+.navbar_image {
+    width: 100px;
+    margin-top: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.navbar_search {
+    display: flex;
+    flex: 1;
+}
+
+.navbar_search_input {
+    width: 100%;
+    padding: 6px;
+}
+
+input[type=text]:focus {
+    border: 4px solid #cd9042;
+}
+
+input[type=email]:focus {
+    border: 4px solid #cd9042;
+}
+
+.search_icon {
+    background-color: #cd9042;
+    padding: 5px;
+}
+
+.navbar_content {
+    color: white;
+    padding: 10px;
+    flex-direction: column;
+    display: flex;
+}
+
+.navbar_content_1 {
+    color: white;
+    flex-direction: column;
+    display: flex;
+    padding: 10px;
+}
+
+.navbar_content_2 {
+    color: white;
+    flex-direction: column;
+    display: flex;
+    padding: 10px;
+}
+
+.navbar_content_hello {
+    font-size: 9px;
+}
+
+.navbar_content_your {
+    font-size: 9px;
+}
+
+.navbar_content_prime {
+    font-size: 14px;
+}
+
+.navbar_content_sign {
+    font-size: 14px;
+}
+
+.navbar_content_return {
+    font-size: 9px;
+}
+
+.navbar_content_orders {
+    font-size: 14px;
+}
+
+.navbar_cart {
+    color: white;
+}
+
+.navbar_cartt {
+    color: #cd9042;
+}

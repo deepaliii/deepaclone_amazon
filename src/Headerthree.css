@@ -1,0 +1,14 @@
+.para
+{
+  box-sizing: border-box;
+  
+  color: black;
+  margin-left: 150px;
+  padding: 8px;
+  
+}
+.header_three
+{
+    height: 40px;
+    background-color: white;
+}
