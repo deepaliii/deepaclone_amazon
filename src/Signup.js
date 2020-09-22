@@ -5,6 +5,8 @@ import db from './firebase';
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
+import {useDispatch} from "react-redux";
+import {addUser} from './action'
 
 function Signup() {
     const [name, setName] = useState('')
@@ -12,6 +14,8 @@ function Signup() {
     const [password, setPassword] = useState('')
     const [confirmPassword, setconfirmPassword] = useState('')
     const history = useHistory();
+    const dispatch=useDispatch();
+
     const signup = e => {
         if (password == confirmPassword) {
             e.preventDefault();
@@ -32,6 +36,10 @@ function Signup() {
                         console.error(err);
                     } else {
                         console.log("DATA SAVED")
+
+                        dispatch(
+                            addUser(name)
+                        )
                         history.push('/'); // client side rendering to HOME PAGE
 
                     }

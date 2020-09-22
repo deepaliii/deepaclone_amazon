@@ -6,12 +6,17 @@ import { Link } from 'react-router-dom'
 import {useState,useEffect} from 'react'
 import {useHistory } from 'react-router-dom'
 import db from './firebase'
+import {useSelector} from 'react-redux';
+import {useDispatch} from "react-redux";
+import {addUser} from './action'
 
 function Header() {
     const [name, setName] = useState('')
     const history=useHistory();
+    const dispatch=useDispatch();
 
-
+    const authReducer=useSelector(state=>state.authReducer)
+    const cartReducer=useSelector(state=>state.cartReducer)
      useEffect( () => {  
         //var user=userName;
         db.auth().onAuthStateChanged(function(user) {
@@ -19,7 +24,7 @@ function Header() {
               // User is signed in.
             //   setName(db.auth().currentUser.displayName);
             //   history.push('/')
-            setName(db.auth().currentUser.displayName);
+            // setName(db.auth().currentUser.displayName);
               // ...
             } else {
               // User is signed out.
@@ -27,6 +32,19 @@ function Header() {
             }
           });
      }, [])
+
+     const signout=(e)=>{
+         e.preventDefault();
+        db.auth().signOut().then((e)=>{
+
+            dispatch(
+                addUser(null)
+            )
+        }).catch((error)=>{
+
+        })
+
+     }
     return (
 
         <div className="navbar">
@@ -43,8 +61,12 @@ function Header() {
                 <Link to="/login">
                     <div className="navbar_content">
 
-                        <span className="navbar_content_hello">Hello, {name}</span>
-                        <span type="submit" className="navbar_content_sign">Sign in</span>
+                        <span className="navbar_content_hello">Hello, {authReducer}</span>
+                        {
+                            authReducer? <span onClick={signout} className="navbar_content_sign">Sign OUT</span>
+                                      :  <span   className="navbar_content_sign">Sign in</span>
+
+                        }
 
                     </div>
                 </Link>
@@ -63,7 +85,7 @@ function Header() {
 
             <div className="navbar_cart">
                 <ShoppingCartOutlinedIcon />
-                <span className="navbar_cartt">0</span>
+                <span className="navbar_cartt">{cartReducer.length}</span>
             </div>
 
             

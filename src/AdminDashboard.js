@@ -31,7 +31,10 @@ function AdminDashboard() {
             else{
                 console.log("DATA SAVED")
                 alert("DATA SAVED")
-                
+                setTitle("")
+                setDescription("")
+                setPrice("")
+                setRating("")
                 
             }
         })

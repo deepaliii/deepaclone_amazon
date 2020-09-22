@@ -2,22 +2,26 @@ import React from 'react'
 import './Login.css'
 import { Link } from 'react-router-dom'
 import {useState} from 'react'
-import db from './firebase'
-import {useHistory } from 'react-router-dom'
-
-
+import db from './firebase';
+import {useHistory } from 'react-router-dom';
+import {useDispatch} from "react-redux";
+import {addUser} from './action'
 
 
 function Login() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const history=useHistory();
-    const signin= e =>
+    const dispatch=useDispatch();
+
+    const signin = (e) =>
     {
         e.preventDefault();
         db.auth().signInWithEmailAndPassword(email,password).then((e)=>{
             console.log("Signed IN")
-
+            dispatch(
+                addUser(e.user.displayName)
+            )
             history.push('/');// client side rendering to HOME PAGE
 
         }).catch((err)=>{

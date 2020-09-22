@@ -1,7 +1,21 @@
 import React from 'react'
+import { addToCart } from './action'
 import './Product.css'
 
+import {useDispatch} from "react-redux";
 function Product({title,image,price,rating}) {
+
+    const dispatch=useDispatch();
+
+    function addToBasket(){
+
+      dispatch(addToCart({
+          title:title,
+          image:image,
+          price:price,
+          rating:rating,
+      }))
+    }
     return (
         <div className="product">
             <div className="product__info">
@@ -11,7 +25,7 @@ function Product({title,image,price,rating}) {
                 <small>Rs</small><strong>{price}</strong>
                 </p>
                 <p className="product__rating">{rating}</p>
-                <button className="but">Add to Cart</button>
+                <button onClick={addToBasket} className="but">Add to Cart</button>
                 </div>  
         </div>
         
