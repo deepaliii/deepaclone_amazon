@@ -12,3 +12,18 @@ export const addToCart=(data)=>{
         data:data
     };
 };
+export const addAdmin=(data)=>{
+
+    return {
+        type:"SET_ADMIN",
+        data:data
+    };
+};
+
+export const removeFromBasket=(data)=>{
+
+    return {
+        type:"DECREAMENT",
+        data:data
+    };
+};

@@ -9,6 +9,7 @@ import db from './firebase'
 import {useSelector} from 'react-redux';
 import {useDispatch} from "react-redux";
 import {addUser} from './action'
+import Checkout from './Checkout'
 
 function Header() {
     const [name, setName] = useState('')
@@ -82,11 +83,12 @@ function Header() {
                 <span className="navbar_content_prime">Prime</span>
             </div>
 
-
+            <Link to="/Checkout">
             <div className="navbar_cart">
                 <ShoppingCartOutlinedIcon />
                 <span className="navbar_cartt">{cartReducer.length}</span>
             </div>
+            </Link>
 
             
         </div>

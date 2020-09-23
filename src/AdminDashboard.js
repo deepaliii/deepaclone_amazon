@@ -1,7 +1,8 @@
 import React from 'react'
-import {useState} from 'react'
+import {useState,useEffect} from 'react'
 import db from './firebase'
 import {useHistory } from 'react-router-dom'
+import {useSelector} from 'react-redux';
 
 function AdminDashboard() {
     const [title, setTitle] = useState('')
@@ -10,6 +11,12 @@ function AdminDashboard() {
     const [rate, setRating] = useState('')
     const [price, setPrice] = useState('')
     const history=useHistory();
+    const  adminReducer=useSelector(state=>state.adminReducer);
+    useEffect(() => {
+       if(!adminReducer){
+            history.push("/admin")
+       }
+    }, [])
 
     const signin=e=>
     {

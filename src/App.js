@@ -25,6 +25,10 @@ function App() {
           <Route path="/login">
           <Login />
           </Route>
+          <Route path="/checkout">
+          <Checkout/>
+          </Route>
+
           <Route path="/check">
             <Header />
             <Headertwo />

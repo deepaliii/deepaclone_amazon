@@ -27,6 +27,7 @@ function Login() {
         }).catch((err)=>{
             if(err){
                 console.error(err)
+                alert(err.message)
             }
             else{
                 console.log("Signed IN SuCCESSFULLY")

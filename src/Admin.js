@@ -1,15 +1,27 @@
 import React from 'react'
 import {useState} from 'react'
 import {useHistory} from 'react-router-dom'
+import {useDispatch} from 'react-redux'
+import {addAdmin} from './action'
+import db from './firebase'
 
 function Admin() {
     const [AdminName, setAdminName] = useState('');
     const [Password, setPassword] = useState('');
     const history=useHistory();
+    const dispatch=useDispatch();
     const signin =e=>
     {
-        if(AdminName==="ADMIN" && Password==="PASSWORD"){
-            history.push('/admindashboard')
+        if(AdminName==="ADMIN@gmail.com"){
+
+            db.auth().signInWithEmailAndPassword(AdminName,Password).then((e)=>{
+                dispatch(
+                    addAdmin("ADMIN")
+                )
+
+                history.push('/admindashboard')
+            })
+            
         }else{
             alert("WRONG CREDENTIALS")
         }

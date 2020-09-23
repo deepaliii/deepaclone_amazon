@@ -5,7 +5,8 @@ function cartReducer(state=[],action){
             return [...state,action.data];
             //state=act
         case 'DECREAMENT':
-            return null;
+            console.log(state)
+            return [...state];
         default:
             return state;
 
@@ -13,3 +14,4 @@ function cartReducer(state=[],action){
 }
 
 export default cartReducer;
+

@@ -4,9 +4,20 @@ import Product from './Product';
 import Headerthree from './Headerthree';
 import db from './firebase';
 import { useState,useEffect } from 'react';
+
+import {useDispatch} from 'react-redux'
+import {addAdmin} from './action'
+
 function Home() {
     const [data, setData] = useState([]);
+    const dispatch=useDispatch();
+
     useEffect(() => {
+
+
+        dispatch(
+            addAdmin(null)
+        )
     db.database().ref("Amazon_Items").on('value',(snap)=>{
         let products = snap.val();
         let newProduct=[];

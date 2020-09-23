@@ -1,0 +1,60 @@
+.checkout__info
+{
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 10px;
+}
+.checkout__title
+{
+    color:white;
+    margin-top: 0px;
+}
+.checkout__data
+{  
+
+height: 350px;
+display: flex;
+flex-direction: column;
+margin-top: 10px;
+margin-left: auto;
+margin-right: auto;
+background-color:black;
+padding: 10px;
+
+}
+
+.checkout__rate
+{
+   
+    color:white;
+    margin-top: 0px;
+    
+}
+.checkout__price
+{
+  color:white;
+    margin-top: 0px;
+}
+.checkout__image
+{
+    
+     width: 300px;
+     object-fit: contain;
+}
+.check
+{
+   width:150px;
+   margin-top: 15px;
+    
+}
+.buttton
+{
+    text-align: center;
+    
+}
+
+.heading
+{
+    text-align: center;
+    object-fit: contain;
+}
