@@ -11,22 +11,34 @@ function Checkout() {
     const history=useHistory();
     const dispatch=useDispatch();
     const [price, setprice] = useState(0)
+    
     useEffect(() => {
        let x=0
         cartReducer.map((product)=>{
             x+=parseInt(product.price);
         })
+        /**
+         * cartReducer
+         * int x=0;
+         * for(int i=0;i<carReducer.length();i++){
+         *  String= product=cartReducer[i];
+         *  x=x+Integer.parseInt( product.price)
+         * }
+         */
         setprice(x)
     }, [])
     function remove(product){
+        let x=price;
     
         console.log(product);
         for(let i in cartReducer){
             if(cartReducer[i].title==product){
+                x=x-cartReducer[i].price;
                 cartReducer.splice(i,1);
+                
             }
         }
-        //cartReducer=[2,3,4,5]
+        setprice(x)
         dispatch(
             removeFromBasket(cartReducer)
         )

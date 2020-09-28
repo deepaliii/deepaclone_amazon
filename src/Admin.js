@@ -36,7 +36,7 @@ function Admin() {
             <span>Email</span>
             <input type="email" placeholder="Enter Email" value={AdminName} onChange={e=>setAdminName(e.target.value)}/>
             <span>Password</span>
-            <input type="text" placeholder="Enter Password" value={Password} onChange={e=>setPassword(e.target.value)}/>
+            <input type="password" placeholder="Enter Password" value={Password} onChange={e=>setPassword(e.target.value)}/>
             <button type="submit" onClick={signin}>Sign In</button>
             </div>
         </div>

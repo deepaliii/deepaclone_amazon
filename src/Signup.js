@@ -59,42 +59,45 @@ function Signup() {
     }
     return (
 
-        <div className="login" >
-            <Link to="/" >
-                <img className="login__logo"
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1024px-Amazon_logo.svg.png"
-                    alt="" />
-            </Link>
-            <h1> Sign Up </h1>
-        <span> Name </span> 
-        <input type="text"
-                    placeholder="Enter Name"
-                    value={name}
-                    onChange={e => setName(e.target.value)}
-                /> 
-                <span> Email </span> <
-                            input type="email"
-                            placeholder="Enter Email"
-                            value={email}
-                            onChange={e => setEmail(e.target.value)}
-                        /> 
-                        <span> Password </span> 
+        <div className="register" >
+                <Link to="/" >
+                    <img className="register__logo"
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1024px-Amazon_logo.svg.png"
+                        alt="" />
+                </Link>
+            <div className="register__container">
+                <h1> Sign Up </h1>
+                <form>
+            <h5> Name </h5> 
+            <input type="text"
+                        placeholder="Enter Name"
+                        value={name}
+                        onChange={e => setName(e.target.value)}
+                    /> 
+                    <h5> Email </h5> <input type="email"
+                                placeholder="Enter Email"
+                                value={email}
+                                onChange={e => setEmail(e.target.value)}
+                            /> 
+                        <h5> Password </h5> 
                         <input type="password"
                                 placeholder="Enter Password"
                                 value={password}
                                 onChange={e => setPassword(e.target.value)}
                             /> 
-                            <span> Confirm Password </span> 
+                            <h5> Confirm Password </h5> 
                             <input type="password"
                                     placeholder="Enter Confirm Password"
                                     value={confirmPassword}
                                     onChange={e => setconfirmPassword(e.target.value)}
                                 /> 
                                 <button type="submit"
-                                    onClick={signup} > Sign Up </button> 
+                                    onClick={signup} className="register__signInButton" > Sign Up </button> 
+                                    </form>
                                     <Link to="/login">
-                                        <button type="submit" > Already have account </button> 
+                                        <button className="register__registerButton"> Already have account </button> 
                                         </Link> 
+                                        </div>
                                         </div>
 
 

@@ -41,15 +41,20 @@ function Login() {
             <Link to="/">
             <img className="login__logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1024px-Amazon_logo.svg.png" alt=""/>
             </Link>
+            <div className="login__container">
+            <form>
             <h1>Sign In</h1>
-            <span>Email</span>
+            <h5>Email</h5>
             <input type="email" placeholder="Enter Email" value={email} onChange={e=>setEmail(e.target.value)}/>
-            <span>Password</span>
-            <input type="text" placeholder="Enter Password" value={password} onChange={e=>setPassword(e.target.value)}/>
-            <button type="submit" onClick={signin}>Sign In</button>
+            <h5>Password</h5>
+            <input type="password" placeholder="Enter Password" value={password} onChange={e=>setPassword(e.target.value)}/>
+            <button className="login__signInButton" type="submit" onClick={signin}>Sign In</button>
+            </form>
+            <p>By Signing-in, you agree to Amazon FAKE CLONE Conditions of Use and Privacy Notice. </p>
             <Link to="/Signup">
-            <button type="submit">Create your new account</button>
-            </Link>
+            <button className="login__registerButton" type="submit">Create your new account</button>
+             </Link>
+        </div>
         </div>
 
 
